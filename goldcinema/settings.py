@@ -69,10 +69,7 @@ WSGI_APPLICATION = "goldcinema.wsgi.application"
 # -----------------------------
 # Database
 # -----------------------------
-DATABASE_URL = os.environ.get(
-    "DATABASE_URL",
-    "postgresql://postgres:password@localhost:5432/mydatabase"  # fallback for local dev
-)
+
 
 DATABASES = {
     "default": dj_database_url.config(
@@ -138,4 +135,5 @@ else:
     SECURE_SSL_REDIRECT = False
     SESSION_COOKIE_SECURE = False
     CSRF_COOKIE_SECURE = False
+
 
