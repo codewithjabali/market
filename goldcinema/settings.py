@@ -19,7 +19,7 @@ DEBUG = "False"
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
-    "goldcinematshirt.onrender.com",
+    "goldcinemashirt.onrender.com",
 ]
 
 # -----------------------------
@@ -101,14 +101,10 @@ USE_TZ = True
 # Static & Media files
 # -----------------------------
 STATIC_URL = "/static/"
+STATICFILES_DIRS = [BASE_DIR / "cinema/static/staticfiles"]  # app-level static folder
+STATIC_ROOT = BASE_DIR / "staticfile"           # where collectstatic puts them
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-# Collect static into this folder for production
-STATIC_ROOT = BASE_DIR / "staticfiles"
-
-# Where Django looks for extra static files in dev
-STATICFILES_DIRS = [
-    BASE_DIR / "cinema" / "static",
-]
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
@@ -135,5 +131,6 @@ else:
     SECURE_SSL_REDIRECT = False
     SESSION_COOKIE_SECURE = False
     CSRF_COOKIE_SECURE = False
+
 
 
