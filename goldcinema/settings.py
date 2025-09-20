@@ -101,9 +101,15 @@ USE_TZ = True
 # Static & Media files
 # -----------------------------
 STATIC_URL = "/static/"
-STATICFILES_DIRS = [BASE_DIR / "cinema/static/staticfiles"]  # app-level static folder
-STATIC_ROOT = BASE_DIR / "staticfile"           # where collectstatic puts them
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+# Tell Django where to find your static files during development
+STATICFILES_DIRS = [
+    BASE_DIR / "cinema" / "static",   # app-level static folder
+]
+
+# This is where collectstatic will put all static files in production
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
 
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
@@ -131,6 +137,7 @@ else:
     SECURE_SSL_REDIRECT = False
     SESSION_COOKIE_SECURE = False
     CSRF_COOKIE_SECURE = False
+
 
 
 
