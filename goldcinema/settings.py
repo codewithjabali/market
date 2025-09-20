@@ -19,7 +19,7 @@ DEBUG = "False"
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
-    "gold.onrender.com",
+    "Comradeshirts.onrender.com",
 ]
 
 # -----------------------------
@@ -73,11 +73,12 @@ WSGI_APPLICATION = "goldcinema.wsgi.application"
 
 DATABASES = {
     "default": dj_database_url.config(
-        default=DATABASE_URL,
+        default=os.environ.get("DATABASE_URL"),  # ✅ get from env
         conn_max_age=600,
-        ssl_require=False,  # set True on Render/Heroku if required
+        ssl_require=True,  # for Render
     )
 }
+
 
 # -----------------------------
 # Password validation
@@ -137,6 +138,7 @@ else:
     SECURE_SSL_REDIRECT = False
     SESSION_COOKIE_SECURE = False
     CSRF_COOKIE_SECURE = False
+
 
 
 
