@@ -1,0 +1,164 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comrade plug | Market</title>
+  
+<style>
+  /* General reset */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* Header */
+header {
+  background: #222;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+header nav {
+  margin-top: 0.5rem;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* Product grid */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Individual product card */
+.product {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.product:hover {
+  transform: translateY(-5px);
+}
+
+/* Portrait image styling */
+.product img {
+  width: 100%;
+  height: 280px;          /* fixed portrait height */
+  object-fit: cover;      /* crop/scale image neatly */
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Buttons */
+.product a {
+  display: inline-block;
+  background: #ff6600;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.product a:hover {
+  background: #cc5200;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.2rem;
+  }
+
+  .product img {
+    height: 220px; /* shorter portrait for small screens */
+  }
+}
+</style>
+</head>
+<body>
+  <header>
+    <h1>Our Market</h1>
+    <nav>
+      <a href="{% url 'home' %}">Home</a>
+      <a href="/read/">Market</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="products">
+        
+      <div class="product"><h3>Navy Blue Polo</h3><img src="{% static 'shirt1.jpg' %}" alt="Classic White Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
+      <div class="product"><h3>Black Cat</h3><img src="{% static 'shirt2.jpg' %}" alt="Blue Denim Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
+      <div class="product"><h3>Orange Pink</h3><img src="{% static 'shirt3.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
+      <div class="product"><h3>Black Polo</h3><img src="{% static 'shirt4.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
+      <div class="product"><h3>DARK GRAY</h3><img src="{% static 'shirt5.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
+      <div class="product"><h3>WHITE T SHIRT</h3><img src="{% static 'shirt6.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
+      <div class="product"><h3>WHITE BLUE</h3><img src="{% static 'shirt7.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
+      <div class="product"><h3>LIGHT WHITE</h3><img src="{% static 'shirt8.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
+      <div class="product"><h3>WHITE DEVON</h3><img src="{% static 'shirt9.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
+      <div class="product"><h3>Classic Black Shirt</h3><img src="{% static 'shirt10.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
+      <div class="product"><h3>Classic USA Tshirt</h3><img src="{% static 'shirt11.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
+      <div class="product"><h3>Classic Orange Tshirt</h3><img src="{% static 'shirt12.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
+      <div class="product"><h3>Classic Orange Tshirt</h3><img src="{% static 'shirt13.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
+      <div class="product"><h3>Classic Grey</h3><img src="{% static 'shirt14.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
+      <div class="product"><h3>Mixed Color Gildan Type</h3><img src="{% static 'shirt15.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
+      <div class="product"><h3>FLYNN</h3><img src="{% static 'shirt16.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
+      <div class="product"><h3>Orange Type Tshirt</h3><img src="{% static 'shirt17.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
+      <div class="product"><h3>Gray Honda Indi Toronto</h3><img src="{% static 'shirt18.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
+      <div class="product"><h3>Turtle Head</h3><img src="{% static 'shirt19.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
+      <div class="product"><h3>Athletico Physical Therapy</h3><img src="{% static 'shirt20.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
+      <div class="product"><h3>Red La Taperia Tshirt</h3><img src="{% static 'shirt21.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
+      <div class="product"><h3>Red White cola Tshirt</h3><img src="{% static 'shirt22.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
+      <div class="product"><h3>Mixed Color Gildan Type</h3><img src="{% static 'shirt23.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
+      <div class="product"><h3>White Tshirt</h3><img src="{% static 'shirt24.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
+      <div class="product"><h3>Colossian Tshirt</h3><img src="{% static 'shirt25.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
+      <div class="product"><h3>White UPMC Tshirt</h3><img src="{% static 'shirt26.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
+      <div class="product"><h3>Vynamic Tshirt</h3><img src="{% static 'shirt27.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
+      <div class="product"><h3>Light Blue Tshirt</h3><img src="{% static 'shirt28.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
+      <div class="product"><h3>AUAB EASTER RUN Tshirt</h3><img src="{% static 'shirt29.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
+      <div class="product"><h3>Dark Grey Tshirt</h3><img src="{% static 'shirt30.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
+      <div class="product"><h3>Pink Tshirt</h3><img src="{% static 'shirt31.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
+      <div class="product"><h3>Blue Tshirt</h3><img src="{% static 'shirt32.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
+      <div class="product"><h3>Red Tshirt</h3><img src="{% static 'shirt33.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
+      <div class="product"><h3>Light Blue Tshirt</h3><img src="{% static 'shirt34.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
+      <div class="product"><h3>Pink Tshirt</h3><img src="{% static 'shirt35.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Shirt Store. Built with ❤️</p>
+  </footer>
+</body>
+</html>
