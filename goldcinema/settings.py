@@ -19,7 +19,7 @@ DEBUG = "False"
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
-    "goldcinematshirts.onrender.com",
+    "goldcinematshirt.onrender.com",
 ]
 
 # -----------------------------
@@ -138,3 +138,4 @@ else:
     SECURE_SSL_REDIRECT = False
     SESSION_COOKIE_SECURE = False
     CSRF_COOKIE_SECURE = False
+
