@@ -4,162 +4,320 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Comrade plug | Market</title>
-  
-<style>
-  /* General reset */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f9f9f9;
-  color: #333;
-}
-
-/* Header */
-header {
-  background: #222;
-  color: white;
-  padding: 1rem;
-  text-align: center;
-}
-
-header nav {
-  margin-top: 0.5rem;
-}
-
-header nav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 10px;
-  font-weight: bold;
-}
-
-header nav a:hover {
-  text-decoration: underline;
-}
-
-/* Product grid */
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  padding: 20px;
-}
-
-/* Individual product card */
-.product {
-  background: white;
-  border-radius: 10px;
-  padding: 15px;
-  text-align: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
-}
-
-.product:hover {
-  transform: translateY(-5px);
-}
-
-/* Portrait image styling */
-.product img {
-  width: 100%;
-  height: 280px;          /* fixed portrait height */
-  object-fit: cover;      /* crop/scale image neatly */
-  border-radius: 8px;
-  margin-bottom: 10px;
-}
-
-/* Buttons */
-.product a {
-  display: inline-block;
-  background: #ff6600;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.2s;
-}
-
-.product a:hover {
-  background: #cc5200;
-}
-
-/* Footer */
-footer {
-  background: #222;
-  color: white;
-  text-align: center;
-  padding: 15px;
-  margin-top: 20px;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 1.2rem;
-  }
-
-  .product img {
-    height: 220px; /* shorter portrait for small screens */
-  }
-}
-</style>
+  <title>Comrade Plug | Market</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <header>
-    <h1>Our Market</h1>
-    <nav>
-      <a href="{% url 'home' %}">Home</a>
-      <a href="/read/">Market</a>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- HEADER -->
+  <header class="bg-gray-900 text-white py-5 shadow-md">
+    <h1 class="text-3xl font-bold text-center">Our Market</h1>
+    <nav class="flex justify-center mt-3 space-x-8">
+      <a href="{% url 'home' %}" class="hover:text-orange-400 font-semibold transition">Home</a>
+      <a href="/read/" class="hover:text-orange-400 font-semibold transition">Market</a>
     </nav>
   </header>
 
-  <main>
-    <section class="products">
-        
-      <div class="product"><h3>Navy Blue Polo</h3><img src="{% static 'staticfiles/shirt1.jpg' %}" alt="Classic White Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
-      <div class="product"><h3>Black Cat</h3><img src="{% static 'staticfiles/shirt2.jpg' %}" alt="Blue Denim Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
-      <div class="product"><h3>Orange Pink</h3><img src="{% static 'staticfiles/shirt3.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
-      <div class="product"><h3>Black Polo</h3><img src="{% static 'staticfiles/shirt4.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
-      <div class="product"><h3>DARK GRAY</h3><img src="{% static 'staticfiles/shirt5.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
-      <div class="product"><h3>WHITE T SHIRT</h3><img src="{% static 'staticfiles/shirt6.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
-      <div class="product"><h3>WHITE BLUE</h3><img src="{% static 'staticfiles/shirt7.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
-      <div class="product"><h3>LIGHT WHITE</h3><img src="{% static 'staticfiles/shirt8.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
-      <div class="product"><h3>WHITE DEVON</h3><img src="{% static 'staticfiles/shirt9.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
-      <div class="product"><h3>Classic Black Shirt</h3><img src="{% static 'staticfiles/shirt10.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
-      <div class="product"><h3>Classic USA Tshirt</h3><img src="{% static 'staticfiles/shirt11.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
-      <div class="product"><h3>Classic Orange Tshirt</h3><img src="{% static 'staticfiles/shirt12.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
-      <div class="product"><h3>Classic Orange Tshirt</h3><img src="{% static 'staticfiles/shirt13.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
-      <div class="product"><h3>Classic Grey</h3><img src="{% static 'staticfiles/shirt14.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
-      <div class="product"><h3>Mixed Color Gildan Type</h3><img src="{% static 'staticfiles/shirt15.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
-      <div class="product"><h3>FLYNN</h3><img src="{% static 'staticfiles/shirt16.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
-      <div class="product"><h3>Orange Type Tshirt</h3><img src="{% static 'staticfiles/shirt17.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
-      <div class="product"><h3>Gray Honda Indi Toronto</h3><img src="{% static 'staticfiles/shirt18.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
-      <div class="product"><h3>Turtle Head</h3><img src="{% static 'staticfiles/shirt19.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
-      <div class="product"><h3>Athletico Physical Therapy</h3><img src="{% static 'staticfiles/shirt20.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
-      <div class="product"><h3>Red La Taperia Tshirt</h3><img src="{% static 'staticfiles/shirt21.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
-      <div class="product"><h3>Red White cola Tshirt</h3><img src="{% static 'staticfiles/shirt22.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
-      <div class="product"><h3>Mixed Color Gildan Type</h3><img src="{% static 'staticfiles/shirt23.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
-      <div class="product"><h3>White Tshirt</h3><img src="{% static 'staticfiles/shirt24.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
-      <div class="product"><h3>Colossian Tshirt</h3><img src="{% static 'staticfiles/shirt25.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
-      <div class="product"><h3>White UPMC Tshirt</h3><img src="{% static 'staticfiles/shirt26.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
-      <div class="product"><h3>Vynamic Tshirt</h3><img src="{% static 'staticfiles/shirt27.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
-      <div class="product"><h3>Light Blue Tshirt</h3><img src="{% static 'staticfiles/shirt28.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
-      <div class="product"><h3>AUAB EASTER RUN Tshirt</h3><img src="{% static 'staticfiles/shirt29.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
-      <div class="product"><h3>Dark Grey Tshirt</h3><img src="{% static 'staticfiles/shirt30.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
-      <div class="product"><h3>Pink Tshirt</h3><img src="{% static 'staticfiles/shirt31.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
-      <div class="product"><h3>Blue Tshirt</h3><img src="{% static 'staticfiles/shirt32.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
-      <div class="product"><h3>Red Tshirt</h3><img src="{% static 'staticfiles/shirt33.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
-      <div class="product"><h3>Light Blue Tshirt</h3><img src="{% static 'staticfiles/shirt34.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
-      <div class="product"><h3>Pink Tshirt</h3><img src="{% static 'staticfiles/shirt35.jpg' %}" alt="Black Polo Shirt"><p>ksh 250</p><button><a href="/about/">Add To Cart</a></button></div>
+  <!-- PRODUCT GRID -->
+  <main class="py-10 px-4 md:px-8 lg:px-16">
+    <section class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
 
+      <!-- PRODUCT 1 -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg p-4 text-center transition-transform transform hover:-translate-y-1">
+        <h3 class="font-bold text-lg mb-2">Navy Blue Polo</h3>
+        <img src="{% static 'shirt1.jpg' %}" alt="Navy Blue Polo" class="w-full h-auto aspect-[3/4] object-cover rounded-xl mb-3">
+        <p class="font-semibold text-gray-700 mb-3">Ksh 250</p>
+        <a href="/about/" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition">Add To Cart</a>
+      </div>
+
+      <!-- PRODUCT 2 -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg p-4 text-center transition-transform transform hover:-translate-y-1">
+        <h3 class="font-bold text-lg mb-2">Black Cat</h3>
+        <img src="{% static 'shirt2.jpg' %}" alt="Black Cat" class="w-full h-auto aspect-[3/4] object-cover rounded-xl mb-3">
+        <p class="font-semibold text-gray-700 mb-3">Ksh 250</p>
+        <a href="/about/" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition">Add To Cart</a>
+      </div>
+
+      <!-- PRODUCT 3 -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg p-4 text-center transition-transform transform hover:-translate-y-1">
+        <h3 class="font-bold text-lg mb-2">Orange Pink</h3>
+        <img src="{% static 'shirt3.jpg' %}" alt="Orange Pink" class="w-full h-auto aspect-[3/4] object-cover rounded-xl mb-3">
+        <p class="font-semibold text-gray-700 mb-3">Ksh 250</p>
+        <a href="/about/" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition">Add To Cart</a>
+      </div>
+
+      <!-- PRODUCT 4 -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg p-4 text-center transition-transform transform hover:-translate-y-1">
+        <h3 class="font-bold text-lg mb-2">Black Polo</h3>
+        <img src="{% static 'shirt4.jpg' %}" alt="Black Polo" class="w-full h-auto aspect-[3/4] object-cover rounded-xl mb-3">
+        <p class="font-semibold text-gray-700 mb-3">Ksh 250</p>
+        <a href="/about/" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition">Add To Cart</a>
+      </div>
+
+      <!-- PRODUCT 5 -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg p-4 text-center transition-transform transform hover:-translate-y-1">
+        <h3 class="font-bold text-lg mb-2">Dark Gray</h3>
+        <img src="{% static 'shirt5.jpg' %}" alt="Dark Gray" class="w-full h-auto aspect-[3/4] object-cover rounded-xl mb-3">
+        <p class="font-semibold text-gray-700 mb-3">Ksh 250</p>
+        <a href="/about/" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition">Add To Cart</a>
+      </div>
+
+      <!-- PRODUCT 6 -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg p-4 text-center transition-transform transform hover:-translate-y-1">
+        <h3 class="font-bold text-lg mb-2">White T Shirt</h3>
+        <img src="{% static 'shirt6.jpg' %}" alt="White T Shirt" class="w-full h-auto aspect-[3/4] object-cover rounded-xl mb-3">
+        <p class="font-semibold text-gray-700 mb-3">Ksh 250</p>
+        <a href="/about/" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition">Add To Cart</a>
+      </div>
+
+      <!-- PRODUCT 7 -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg p-4 text-center transition-transform transform hover:-translate-y-1">
+        <h3 class="font-bold text-lg mb-2">White Blue</h3>
+        <img src="{% static 'shirt7.jpg' %}" alt="White Blue" class="w-full h-auto aspect-[3/4] object-cover rounded-xl mb-3">
+        <p class="font-semibold text-gray-700 mb-3">Ksh 250</p>
+        <a href="/about/" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition">Add To Cart</a>
+      </div>
+
+      <!-- PRODUCT 8 -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg p-4 text-center transition-transform transform hover:-translate-y-1">
+        <h3 class="font-bold text-lg mb-2">Sky Gray</h3>
+        <img src="{% static 'shirt8.jpg' %}" alt="Sky Gray" class="w-full h-auto aspect-[3/4] object-cover rounded-xl mb-3">
+        <p class="font-semibold text-gray-700 mb-3">Ksh 250</p>
+        <a href="/about/" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition">Add To Cart</a>
+      </div>
+
+      <!-- PRODUCT 9 -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg p-4 text-center transition-transform transform hover:-translate-y-1">
+        <h3 class="font-bold text-lg mb-2">Orange Tee</h3>
+        <img src="{% static 'shirt9.jpg' %}" alt="Orange Tee" class="w-full h-auto aspect-[3/4] object-cover rounded-xl mb-3">
+        <p class="font-semibold text-gray-700 mb-3">Ksh 250</p>
+        <a href="/about/" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition">Add To Cart</a>
+      </div>
+
+      <!-- PRODUCT 10 -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg p-4 text-center transition-transform transform hover:-translate-y-1">
+        <h3 class="font-bold text-lg mb-2">Maroon Classic</h3>
+        <img src="{% static 'shirt10.jpg' %}" alt="Maroon Classic" class="w-full h-auto aspect-[3/4] object-cover rounded-xl mb-3">
+        <p class="font-semibold text-gray-700 mb-3">Ksh 250</p>
+        <a href="/about/" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition">Add To Cart</a>
+      </div>
+
+      <!-- PRODUCT 11 -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg p-4 text-center transition-transform transform hover:-translate-y-1">
+        <h3 class="font-bold text-lg mb-2">Light Gray</h3>
+        <img src="{% static 'shirt11.jpg' %}" alt="Light Gray" class="w-full h-auto aspect-[3/4] object-cover rounded-xl mb-3">
+        <p class="font-semibold text-gray-700 mb-3">Ksh 250</p>
+        <a href="/about/" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition">Add To Cart</a>
+      </div>
+
+      <!-- PRODUCT 12 -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg p-4 text-center transition-transform transform hover:-translate-y-1">
+        <h3 class="font-bold text-lg mb-2">Classic White</h3>
+        <img src="{% static 'shirt12.jpg' %}" alt="Classic White" class="w-full h-auto aspect-[3/4] object-cover rounded-xl mb-3">
+        <p class="font-semibold text-gray-700 mb-3">Ksh 250</p>
+        <a href="/about/" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition">Add To Cart</a>
+      </div>
+
+      <!-- PRODUCT 13 -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg p-4 text-center transition-transform transform hover:-translate-y-1">
+        <h3 class="font-bold text-lg mb-2">Dark Navy</h3>
+        <img src="{% static 'shirt13.jpg' %}" alt="Dark Navy" class="w-full h-auto aspect-[3/4] object-cover rounded-xl mb-3">
+        <p class="font-semibold text-gray-700 mb-3">Ksh 250</p>
+        <a href="/about/" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition">Add To Cart</a>
+      </div>
+
+      <!-- PRODUCT 14 -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg p-4 text-center transition-transform transform hover:-translate-y-1">
+        <h3 class="font-bold text-lg mb-2">Green Tee</h3>
+        <img src="{% static 'shirt14.jpg' %}" alt="Green Tee" class="w-full h-auto aspect-[3/4] object-cover rounded-xl mb-3">
+        <p class="font-semibold text-gray-700 mb-3">Ksh 250</p>
+        <a href="/about/" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition">Add To Cart</a>
+      </div>
+
+      <!-- PRODUCT 15 -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg p-4 text-center transition-transform transform hover:-translate-y-1">
+        <h3 class="font-bold text-lg mb-2">Soft Yellow</h3>
+        <img src="{% static 'shirt15.jpg' %}" alt="Soft Yellow" class="w-full h-auto aspect-[3/4] object-cover rounded-xl mb-3">
+        <p class="font-semibold text-gray-700 mb-3">Ksh 250</p>
+        <a href="/about/" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition">Add To Cart</a>
+      </div>
+      <!-- PRODUCT 16 -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg p-4 text-center transition-transform transform hover:-translate-y-1">
+        <h3 class="font-bold text-lg mb-2">Classic Gray</h3>
+        <img src="{% static 'shirt16.jpg' %}" alt="Classic Gray" class="w-full h-auto aspect-[3/4] object-cover rounded-xl mb-3">
+        <p class="font-semibold text-gray-700 mb-3">Ksh 250</p>
+        <a href="/about/" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition">Add To Cart</a>
+      </div>
+
+      <!-- PRODUCT 17 -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg p-4 text-center transition-transform transform hover:-translate-y-1">
+        <h3 class="font-bold text-lg mb-2">Fresh Lemon</h3>
+        <img src="{% static 'shirt17.jpg' %}" alt="Fresh Lemon" class="w-full h-auto aspect-[3/4] object-cover rounded-xl mb-3">
+        <p class="font-semibold text-gray-700 mb-3">Ksh 250</p>
+        <a href="/about/" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition">Add To Cart</a>
+      </div>
+
+      <!-- PRODUCT 18 -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg p-4 text-center transition-transform transform hover:-translate-y-1">
+        <h3 class="font-bold text-lg mb-2">Sky Polo</h3>
+        <img src="{% static 'shirt18.jpg' %}" alt="Sky Polo" class="w-full h-auto aspect-[3/4] object-cover rounded-xl mb-3">
+        <p class="font-semibold text-gray-700 mb-3">Ksh 250</p>
+        <a href="/about/" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition">Add To Cart</a>
+      </div>
+
+      <!-- PRODUCT 19 -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg p-4 text-center transition-transform transform hover:-translate-y-1">
+        <h3 class="font-bold text-lg mb-2">Gray Mix</h3>
+        <img src="{% static 'shirt19.jpg' %}" alt="Gray Mix" class="w-full h-auto aspect-[3/4] object-cover rounded-xl mb-3">
+        <p class="font-semibold text-gray-700 mb-3">Ksh 250</p>
+        <a href="/about/" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition">Add To Cart</a>
+      </div>
+
+      <!-- PRODUCT 20 -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg p-4 text-center transition-transform transform hover:-translate-y-1">
+        <h3 class="font-bold text-lg mb-2">Stripe Red</h3>
+        <img src="{% static 'shirt20.jpg' %}" alt="Stripe Red" class="w-full h-auto aspect-[3/4] object-cover rounded-xl mb-3">
+        <p class="font-semibold text-gray-700 mb-3">Ksh 250</p>
+        <a href="/about/" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition">Add To Cart</a>
+      </div>
+
+      <!-- PRODUCT 21 -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg p-4 text-center transition-transform transform hover:-translate-y-1">
+        <h3 class="font-bold text-lg mb-2">Brown Fit</h3>
+        <img src="{% static 'shirt21.jpg' %}" alt="Brown Fit" class="w-full h-auto aspect-[3/4] object-cover rounded-xl mb-3">
+        <p class="font-semibold text-gray-700 mb-3">Ksh 250</p>
+        <a href="/about/" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition">Add To Cart</a>
+      </div>
+
+      <!-- PRODUCT 22 -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg p-4 text-center transition-transform transform hover:-translate-y-1">
+        <h3 class="font-bold text-lg mb-2">Fresh Mint</h3>
+        <img src="{% static 'shirt22.jpg' %}" alt="Fresh Mint" class="w-full h-auto aspect-[3/4] object-cover rounded-xl mb-3">
+        <p class="font-semibold text-gray-700 mb-3">Ksh 250</p>
+        <a href="/about/" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition">Add To Cart</a>
+      </div>
+
+      <!-- PRODUCT 23 -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg p-4 text-center transition-transform transform hover:-translate-y-1">
+        <h3 class="font-bold text-lg mb-2">Sky Gray</h3>
+        <img src="{% static 'shirt23.jpg' %}" alt="Sky Gray" class="w-full h-auto aspect-[3/4] object-cover rounded-xl mb-3">
+        <p class="font-semibold text-gray-700 mb-3">Ksh 250</p>
+        <a href="/about/" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition">Add To Cart</a>
+      </div>
+
+      <!-- PRODUCT 24 -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg p-4 text-center transition-transform transform hover:-translate-y-1">
+        <h3 class="font-bold text-lg mb-2">Purple Polo</h3>
+        <img src="{% static 'shirt24.jpg' %}" alt="Purple Polo" class="w-full h-auto aspect-[3/4] object-cover rounded-xl mb-3">
+        <p class="font-semibold text-gray-700 mb-3">Ksh 250</p>
+        <a href="/about/" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition">Add To Cart</a>
+      </div>
+
+      <!-- PRODUCT 25 -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg p-4 text-center transition-transform transform hover:-translate-y-1">
+        <h3 class="font-bold text-lg mb-2">Royal Black</h3>
+        <img src="{% static 'shirt25.jpg' %}" alt="Royal Black" class="w-full h-auto aspect-[3/4] object-cover rounded-xl mb-3">
+        <p class="font-semibold text-gray-700 mb-3">Ksh 250</p>
+        <a href="/about/" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition">Add To Cart</a>
+      </div>
+
+      <!-- PRODUCT 26 -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg p-4 text-center transition-transform transform hover:-translate-y-1">
+        <h3 class="font-bold text-lg mb-2">Coral Pink</h3>
+        <img src="{% static 'shirt26.jpg' %}" alt="Coral Pink" class="w-full h-auto aspect-[3/4] object-cover rounded-xl mb-3">
+        <p class="font-semibold text-gray-700 mb-3">Ksh 250</p>
+        <a href="/about/" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition">Add To Cart</a>
+      </div>
+
+      <!-- PRODUCT 27 -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg p-4 text-center transition-transform transform hover:-translate-y-1">
+        <h3 class="font-bold text-lg mb-2">Ocean Blue</h3>
+        <img src="{% static 'shirt27.jpg' %}" alt="Ocean Blue" class="w-full h-auto aspect-[3/4] object-cover rounded-xl mb-3">
+        <p class="font-semibold text-gray-700 mb-3">Ksh 250</p>
+        <a href="/about/" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition">Add To Cart</a>
+      </div>
+
+      <!-- PRODUCT 28 -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg p-4 text-center transition-transform transform hover:-translate-y-1">
+        <h3 class="font-bold text-lg mb-2">Ash White</h3>
+        <img src="{% static 'shirt28.jpg' %}" alt="Ash White" class="w-full h-auto aspect-[3/4] object-cover rounded-xl mb-3">
+        <p class="font-semibold text-gray-700 mb-3">Ksh 250</p>
+        <a href="/about/" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition">Add To Cart</a>
+      </div>
+
+      <!-- PRODUCT 29 -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg p-4 text-center transition-transform transform hover:-translate-y-1">
+        <h3 class="font-bold text-lg mb-2">Safari Brown</h3>
+        <img src="{% static 'shirt29.jpg' %}" alt="Safari Brown" class="w-full h-auto aspect-[3/4] object-cover rounded-xl mb-3">
+        <p class="font-semibold text-gray-700 mb-3">Ksh 250</p>
+        <a href="/about/" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition">Add To Cart</a>
+      </div>
+
+      <!-- PRODUCT 30 -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg p-4 text-center transition-transform transform hover:-translate-y-1">
+        <h3 class="font-bold text-lg mb-2">Peach Orange</h3>
+        <img src="{% static 'shirt30.jpg' %}" alt="Peach Orange" class="w-full h-auto aspect-[3/4] object-cover rounded-xl mb-3">
+        <p class="font-semibold text-gray-700 mb-3">Ksh 250</p>
+        <a href="/about/" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition">Add To Cart</a>
+      </div>
+
+      <!-- PRODUCT 31 -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg p-4 text-center transition-transform transform hover:-translate-y-1">
+        <h3 class="font-bold text-lg mb-2">Jet Black</h3>
+        <img src="{% static 'shirt31.jpg' %}" alt="Jet Black" class="w-full h-auto aspect-[3/4] object-cover rounded-xl mb-3">
+        <p class="font-semibold text-gray-700 mb-3">Ksh 250</p>
+        <a href="/about/" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition">Add To Cart</a>
+      </div>
+
+      <!-- PRODUCT 32 -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg p-4 text-center transition-transform transform hover:-translate-y-1">
+        <h3 class="font-bold text-lg mb-2">Cool Gray</h3>
+        <img src="{% static 'shirt32.jpg' %}" alt="Cool Gray" class="w-full h-auto aspect-[3/4] object-cover rounded-xl mb-3">
+        <p class="font-semibold text-gray-700 mb-3">Ksh 250</p>
+        <a href="/about/" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition">Add To Cart</a>
+      </div>
+
+      <!-- PRODUCT 33 -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg p-4 text-center transition-transform transform hover:-translate-y-1">
+        <h3 class="font-bold text-lg mb-2">Lime Polo</h3>
+        <img src="{% static 'shirt33.jpg' %}" alt="Lime Polo" class="w-full h-auto aspect-[3/4] object-cover rounded-xl mb-3">
+        <p class="font-semibold text-gray-700 mb-3">Ksh 250</p>
+        <a href="/about/" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition">Add To Cart</a>
+      </div>
+
+      <!-- PRODUCT 34 -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg p-4 text-center transition-transform transform hover:-translate-y-1">
+        <h3 class="font-bold text-lg mb-2">Royal Blue</h3>
+        <img src="{% static 'shirt34.jpg' %}" alt="Royal Blue" class="w-full h-auto aspect-[3/4] object-cover rounded-xl mb-3">
+        <p class="font-semibold text-gray-700 mb-3">Ksh 250</p>
+        <a href="/about/" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition">Add To Cart</a>
+      </div>
+
+      <!-- PRODUCT 35 -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg p-4 text-center transition-transform transform hover:-translate-y-1">
+        <h3 class="font-bold text-lg mb-2">Pink T-shirt</h3>
+        <img src="{% static 'shirt35.jpg' %}" alt="Pink T-shirt" class="w-full h-auto aspect-[3/4] object-cover rounded-xl mb-3">
+        <p class="font-semibold text-gray-700 mb-3">Ksh 250</p>
+        <a href="/about/" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition">Add To Cart</a>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>© 2025 Shirt Store. Built with ❤️</p>
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-white text-center py-6 mt-10">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-xl font-semibold mb-2">Comrade Plug | Market</h2>
+      <p class="text-gray-300 mb-3">Your trusted store for quality and affordable shirts.</p>
+      <div class="flex justify-center space-x-4 mb-4">
+        <a href="{% url 'home' %}" class="hover:text-orange-400 transition">Home</a>
+        <a href="/read/" class="hover:text-orange-400 transition">Market</a>
+        <a href="/about/" class="hover:text-orange-400 transition">About</a>
+        <a href="/contact/" class="hover:text-orange-400 transition">Contact</a>
+      </div>
+      <p class="text-gray-400 text-sm">
+        © 2025 Comrade Plug. Built with ❤️ using Tailwind CSS.
+      </p>
+    </div>
   </footer>
 </body>
 </html>
-
